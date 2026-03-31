@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { PartyPopper } from "lucide-react";
 
 const TARGET_DATE = new Date("2026-05-15T21:00:00-03:00");
 
@@ -24,8 +25,8 @@ const calcTimeLeft = (): TimeLeft => {
 const labels: Record<string, string> = {
   days: "Días",
   hours: "Horas",
-  minutes: "Min",
-  seconds: "Seg",
+  minutes: "Minutos",
+  seconds: "Segundos",
 };
 
 const Countdown = () => {
@@ -37,40 +38,66 @@ const Countdown = () => {
   }, []);
 
   return (
-    <section className="py-20 px-6 bg-card">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-md mx-auto text-center"
-      >
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-gradient-gold mb-2">
-          Show Time
-        </h2>
-        <p className="text-muted-foreground font-body text-sm mb-10 tracking-widest uppercase">
-          15 de Mayo, 2026 · 21:00 hs
-        </p>
+    <section className="py-16 md:py-24 px-6 bg-card">
+      <div className="max-w-md mx-auto text-center">
+        {/* Confetti icon */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-6"
+        >
+          <PartyPopper className="w-14 h-14 text-purple-light mx-auto animate-float-gentle" />
+        </motion.div>
 
-        <div className="grid grid-cols-4 gap-4">
-          {(Object.keys(timeLeft) as (keyof TimeLeft)[]).map((key) => (
-            <div key={key} className="flex flex-col items-center">
-              <div className="w-full aspect-square rounded-lg bg-muted border border-border flex items-center justify-center glow-mystic">
-                <span className="font-heading text-3xl md:text-4xl font-bold text-gold">
+        {/* Date */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-body text-lg md:text-xl text-foreground/80 mb-1"
+        >
+          Viernes <strong className="text-foreground">15 de Mayo</strong> de 2026
+        </motion.h2>
+
+        {/* "Faltan" label */}
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="font-heading text-2xl text-purple-light mb-8"
+        >
+          Faltan
+        </motion.h3>
+
+        {/* Countdown grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex items-center justify-center gap-3 md:gap-5"
+        >
+          {(Object.keys(timeLeft) as (keyof TimeLeft)[]).map((key, i) => (
+            <div key={key} className="flex items-center gap-3 md:gap-5">
+              <div className="flex flex-col items-center">
+                <span className="font-ui text-3xl md:text-5xl font-bold text-foreground">
                   {String(timeLeft[key]).padStart(2, "0")}
                 </span>
+                <span className="mt-1 text-xs text-muted-foreground font-ui uppercase tracking-wider">
+                  {labels[key]}
+                </span>
               </div>
-              <span className="mt-2 text-xs text-muted-foreground tracking-wider uppercase font-body">
-                {labels[key]}
-              </span>
+              {i < 3 && (
+                <span className="text-2xl md:text-4xl text-purple-light font-light -mt-4">:</span>
+              )}
             </div>
           ))}
-        </div>
-
-        <p className="mt-10 font-heading text-lg text-foreground italic">
-          ¡No te lo podés perder!
-        </p>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,68 +1,82 @@
 import { motion } from "framer-motion";
+import { Mail, BellRing } from "lucide-react";
 import heroImg from "@/assets/hero-magic.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Background image with dark overlay */}
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Martín Almada - Mago & Showman"
+          alt="Show de Magia"
           className="w-full h-full object-cover"
           width={1080}
           height={1920}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-background/75" />
       </div>
 
-      {/* Sparkle overlay */}
-      <div className="absolute inset-0 sparkle-bg pointer-events-none" />
+      {/* Floating squares decoration (like MD Interactiva) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-6 h-6 rounded-md border border-foreground/10"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              rotate: [0, 45, 0],
+              opacity: [0.1, 0.25, 0.1],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-lg mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-md mx-auto">
+        {/* Animated envelope icon */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-6"
+        >
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-lg border-2 border-purple-brand/60 animate-float-gentle">
+            <div className="relative">
+              <Mail className="w-10 h-10 text-purple-light" />
+              <BellRing className="w-4 h-4 text-purple-soft absolute -top-2 -right-2" />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="font-heading text-5xl md:text-7xl font-bold text-purple-light mb-3"
+        >
+          Martín Almada
+        </motion.h1>
+
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-gold-light font-body text-sm tracking-[0.3em] uppercase mb-4"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="font-body text-lg md:text-xl text-foreground/90"
         >
-          Estás invitado/a
+          ¡Te invita a una <strong className="text-purple-soft">noche de magia</strong>!
         </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
-          className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6"
-        >
-          <span className="text-gradient-gold">Martín Almada</span>
-          <br />
-          <span className="text-foreground text-3xl md:text-4xl font-light italic">presenta</span>
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="space-y-2"
-        >
-          <p className="font-heading text-2xl md:text-3xl text-foreground italic">
-            "Una Noche de Asombro"
-          </p>
-          <p className="text-muted-foreground font-body text-base">
-            Magia, ilusionismo y momentos inolvidables
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="mt-12"
-        >
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold to-transparent mx-auto animate-float" />
-        </motion.div>
       </div>
     </section>
   );
