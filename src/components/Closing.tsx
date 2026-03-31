@@ -8,7 +8,7 @@ const Closing = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-heading text-3xl md:text-4xl font-bold text-purple-light mb-3"
+        className="font-heading text-3xl md:text-4xl font-bold text-purple-vivid mb-3"
       >
         ¡Nos vemos ahí!
       </motion.h2>

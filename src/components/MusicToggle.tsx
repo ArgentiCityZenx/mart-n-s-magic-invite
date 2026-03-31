@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause } from "lucide-react";
+import { useState, useRef } from "react";
 
 const MUSIC_URL =
   "https://cdn.pixabay.com/audio/2022/10/25/audio_052b6tried.mp3";

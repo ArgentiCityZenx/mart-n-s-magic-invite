@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Karla:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,43 +6,45 @@
 
 @layer base {
   :root {
-    --background: 270 10% 8%;
+    --background: 270 15% 6%;
     --foreground: 0 0% 95%;
 
-    --card: 270 12% 12%;
+    --card: 270 18% 10%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 270 12% 12%;
+    --popover: 270 18% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 288 55% 36%;
+    --primary: 280 62% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 288 40% 25%;
+    --secondary: 280 50% 30%;
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 270 10% 16%;
+    --muted: 270 12% 15%;
     --muted-foreground: 270 5% 55%;
 
-    --accent: 288 55% 36%;
+    --accent: 280 62% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 270 10% 20%;
-    --input: 270 10% 20%;
-    --ring: 288 55% 36%;
+    --border: 270 12% 20%;
+    --input: 270 12% 20%;
+    --ring: 280 62% 40%;
 
     --radius: 0.75rem;
 
-    --purple-brand: 288 55% 36%;
-    --purple-light: 288 50% 55%;
-    --purple-glow: 288 60% 45%;
-    --purple-soft: 288 30% 70%;
+    /* Martin Almada brand purples */
+    --purple-brand: 280 62% 40%;
+    --purple-vivid: 280 70% 50%;
+    --purple-light: 280 55% 65%;
+    --purple-soft: 280 35% 75%;
+    --purple-deep: 280 65% 28%;
 
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Karla', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
     --font-ui: 'Rubik', sans-serif;
   }
 }
@@ -65,6 +67,9 @@
   .text-purple-brand {
     color: hsl(var(--purple-brand));
   }
+  .text-purple-vivid {
+    color: hsl(var(--purple-vivid));
+  }
   .text-purple-light {
     color: hsl(var(--purple-light));
   }
@@ -74,25 +79,28 @@
   .bg-purple-brand {
     background-color: hsl(var(--purple-brand));
   }
+  .bg-purple-deep {
+    background-color: hsl(var(--purple-deep));
+  }
   .border-purple-brand {
     border-color: hsl(var(--purple-brand));
   }
   .glow-purple {
-    box-shadow: 0 0 30px hsla(288, 55%, 36%, 0.4);
+    box-shadow: 0 0 30px hsla(280, 62%, 40%, 0.45);
   }
   .btn-purple {
     background-color: hsl(var(--purple-brand));
     color: hsl(0, 0%, 100%);
     border-radius: 9999px;
     padding: 0.75rem 2rem;
-    font-family: var(--font-ui);
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.03em;
     transition: all 0.3s ease;
   }
   .btn-purple:hover {
-    background-color: hsl(var(--purple-glow));
-    box-shadow: 0 0 25px hsla(288, 55%, 36%, 0.5);
+    background-color: hsl(var(--purple-vivid));
+    box-shadow: 0 0 25px hsla(280, 62%, 40%, 0.5);
     transform: scale(1.03);
   }
   .section-divider {
@@ -110,10 +118,4 @@
 }
 .animate-float-gentle {
   animation: float-gentle 3s ease-in-out infinite;
-}
-
-@keyframes confetti-fall {
-  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }

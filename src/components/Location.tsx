@@ -28,7 +28,6 @@ const Location = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-background">
       <div className="max-w-md mx-auto text-center">
-        {/* Location icon */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,21 +35,19 @@ const Location = () => {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <MapPin className="w-14 h-14 text-purple-light mx-auto animate-float-gentle" />
+          <MapPin className="w-14 h-14 text-purple-vivid mx-auto animate-float-gentle" />
         </motion.div>
 
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-heading text-3xl md:text-4xl font-bold text-purple-light mb-4"
+          className="font-heading text-3xl md:text-4xl font-bold text-purple-vivid mb-4"
         >
           ¿Dónde?
         </motion.h2>
 
-        {/* Address */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +55,8 @@ const Location = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="font-body text-base md:text-lg text-foreground/80 mb-8"
         >
-          Te espero en <strong className="text-foreground">Av. Corrientes 857,</strong>
+          Te espero en{" "}
+          <strong className="text-foreground">Av. Corrientes 857,</strong>
           <br />
           CABA · 21:00 hs
         </motion.p>
@@ -88,7 +86,6 @@ const Location = () => {
             ))}
           </div>
 
-          {/* Carousel controls */}
           <button
             onClick={prev}
             className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/60 flex items-center justify-center text-foreground hover:bg-purple-brand transition-colors"
@@ -104,14 +101,13 @@ const Location = () => {
             <ChevronRight className="w-4 h-4" />
           </button>
 
-          {/* Dots */}
           <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
             {images.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  i === current ? "bg-purple-light w-5" : "bg-foreground/30"
+                  i === current ? "bg-purple-vivid w-5" : "bg-foreground/30"
                 }`}
                 aria-label={`Imagen ${i + 1}`}
               />
@@ -119,7 +115,6 @@ const Location = () => {
           </div>
         </motion.div>
 
-        {/* Map button */}
         <motion.a
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
