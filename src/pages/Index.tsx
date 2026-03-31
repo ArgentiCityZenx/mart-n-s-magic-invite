@@ -1,8 +1,8 @@
 import Hero from "@/components/Hero";
 import Countdown from "@/components/Countdown";
 import Location from "@/components/Location";
-import Gallery from "@/components/Gallery";
-import RSVP from "@/components/RSVP";
+import RSVPForm from "@/components/RSVPForm";
+import Closing from "@/components/Closing";
 import MusicToggle from "@/components/MusicToggle";
 import Footer from "@/components/Footer";
 
@@ -11,8 +11,8 @@ const Index = () => (
     <Hero />
     <Countdown />
     <Location />
-    <Gallery />
-    <RSVP />
+    <RSVPForm />
+    <Closing />
     <Footer />
     <MusicToggle />
   </main>

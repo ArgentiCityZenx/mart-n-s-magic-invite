@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Karla:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,49 +6,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4.3%;
-    --foreground: 43 54% 90%;
+    --background: 270 10% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 43 54% 90%;
+    --card: 270 12% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 43 54% 90%;
+    --popover: 270 12% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 274 100% 25.5%;
-    --primary-foreground: 43 54% 90%;
+    --primary: 288 55% 36%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 43 54% 52.5%;
-    --secondary-foreground: 0 0% 4.3%;
+    --secondary: 288 40% 25%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 270 10% 16%;
+    --muted-foreground: 270 5% 55%;
 
-    --accent: 43 54% 52.5%;
-    --accent-foreground: 0 0% 4.3%;
+    --accent: 288 55% 36%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
-    --ring: 274 100% 25.5%;
+    --border: 270 10% 20%;
+    --input: 270 10% 20%;
+    --ring: 288 55% 36%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gold: 43 54% 52.5%;
-    --gold-light: 43 70% 70%;
-    --obsidian: 0 0% 4.3%;
-    --mystic: 274 100% 25.5%;
-    --mystic-light: 274 60% 45%;
+    --purple-brand: 288 55% 36%;
+    --purple-light: 288 50% 55%;
+    --purple-glow: 288 60% 45%;
+    --purple-soft: 288 30% 70%;
 
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Lato', sans-serif;
-
-    --shadow-gold: 0 0 30px hsla(43, 54%, 52.5%, 0.3);
-    --shadow-mystic: 0 0 40px hsla(274, 100%, 25.5%, 0.4);
-    --gradient-magic: linear-gradient(135deg, hsl(274, 100%, 25.5%), hsl(274, 60%, 45%), hsl(43, 54%, 52.5%));
-    --gradient-gold: linear-gradient(135deg, hsl(43, 54%, 42%), hsl(43, 70%, 60%), hsl(43, 54%, 42%));
+    --font-body: 'Karla', sans-serif;
+    --font-ui: 'Rubik', sans-serif;
   }
 }
 
@@ -59,6 +54,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
@@ -66,53 +62,58 @@
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .text-purple-brand {
+    color: hsl(var(--purple-brand));
   }
-  .text-gradient-magic {
-    background: var(--gradient-magic);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .text-purple-light {
+    color: hsl(var(--purple-light));
   }
-  .glow-gold {
-    box-shadow: var(--shadow-gold);
+  .text-purple-soft {
+    color: hsl(var(--purple-soft));
   }
-  .glow-mystic {
-    box-shadow: var(--shadow-mystic);
+  .bg-purple-brand {
+    background-color: hsl(var(--purple-brand));
   }
-  .shimmer {
-    position: relative;
-    overflow: hidden;
+  .border-purple-brand {
+    border-color: hsl(var(--purple-brand));
   }
-  .shimmer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, hsla(43, 54%, 52.5%, 0.2), transparent);
-    animation: shimmer 3s infinite;
+  .glow-purple {
+    box-shadow: 0 0 30px hsla(288, 55%, 36%, 0.4);
   }
-  @keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
+  .btn-purple {
+    background-color: hsl(var(--purple-brand));
+    color: hsl(0, 0%, 100%);
+    border-radius: 9999px;
+    padding: 0.75rem 2rem;
+    font-family: var(--font-ui);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
   }
-  .sparkle-bg {
-    background-image: radial-gradient(2px 2px at 20px 30px, hsl(43, 54%, 52.5%) 0%, transparent 100%),
-                       radial-gradient(2px 2px at 40px 70px, hsl(43, 70%, 70%) 0%, transparent 100%),
-                       radial-gradient(1px 1px at 90px 40px, hsl(43, 54%, 52.5%) 0%, transparent 100%),
-                       radial-gradient(1px 1px at 130px 80px, hsl(43, 70%, 70%) 0%, transparent 100%),
-                       radial-gradient(2px 2px at 160px 30px, hsl(43, 54%, 52.5%) 0%, transparent 100%);
-    background-size: 200px 100px;
-    animation: sparkle 4s linear infinite;
+  .btn-purple:hover {
+    background-color: hsl(var(--purple-glow));
+    box-shadow: 0 0 25px hsla(288, 55%, 36%, 0.5);
+    transform: scale(1.03);
   }
-  @keyframes sparkle {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    background: hsl(var(--purple-brand));
+    margin: 0 auto;
+    border-radius: 2px;
   }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float-gentle {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }

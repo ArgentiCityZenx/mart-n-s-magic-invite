@@ -1,17 +1,16 @@
 const Footer = () => (
-  <footer className="py-10 px-6 text-center border-t border-border">
-    <p className="font-heading text-lg text-gradient-gold mb-1">Martín Almada</p>
-    <p className="text-muted-foreground font-body text-xs tracking-widest uppercase">
-      Mago & Showman
-    </p>
+  <footer className="py-8 px-6 text-center bg-card border-t border-border">
     <a
-      href="https://martinalmadamago.com"
+      href="https://www.instagram.com/martinalmadamago/"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-block mt-3 text-muted-foreground font-body text-xs hover:text-gold transition-colors"
+      className="inline-block text-muted-foreground font-ui text-xs hover:text-purple-light transition-colors"
     >
-      martinalmadamago.com
+      @martinalmadamago
     </a>
+    <p className="text-muted-foreground/50 font-ui text-[10px] mt-2">
+      Diseño digital ✦ Invitación interactiva
+    </p>
   </footer>
 );
 
