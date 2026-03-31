@@ -38,7 +38,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <section className="py-16 md:py-24 px-6 bg-card">
+    <section className="py-16 md:py-24 px-6 bg-secondary">
       <div className="max-w-md mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,7 +47,7 @@ const Countdown = () => {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <PartyPopper className="w-14 h-14 text-purple-vivid mx-auto animate-float-gentle" />
+          <PartyPopper className="w-14 h-14 text-purple-brand mx-auto animate-float-gentle" />
         </motion.div>
 
         <motion.h2
@@ -55,10 +55,9 @@ const Countdown = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-body text-lg md:text-xl text-foreground/80 mb-1"
+          className="font-body text-lg md:text-xl text-foreground/70 mb-1"
         >
-          Viernes{" "}
-          <strong className="text-foreground">15 de Mayo</strong> de 2026
+          Viernes <strong className="text-foreground">15 de Mayo</strong> de 2026
         </motion.h2>
 
         <motion.h3
@@ -66,7 +65,7 @@ const Countdown = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-heading text-2xl text-purple-vivid mb-8"
+          className="font-heading text-2xl text-purple-brand mb-8"
         >
           Faltan
         </motion.h3>
@@ -89,9 +88,7 @@ const Countdown = () => {
                 </span>
               </div>
               {i < 3 && (
-                <span className="text-2xl md:text-4xl text-purple-vivid font-light -mt-4">
-                  :
-                </span>
+                <span className="text-2xl md:text-4xl text-purple-brand font-light -mt-4">:</span>
               )}
             </div>
           ))}

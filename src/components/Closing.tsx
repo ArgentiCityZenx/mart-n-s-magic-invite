@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
 const Closing = () => (
-  <section className="py-16 md:py-24 px-6 bg-background">
+  <section className="py-16 md:py-24 px-6 bg-card">
     <div className="max-w-md mx-auto text-center">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-heading text-3xl md:text-4xl font-bold text-purple-vivid mb-3"
+        className="font-heading text-3xl md:text-4xl font-bold text-purple-brand mb-3"
       >
         ¡Nos vemos ahí!
       </motion.h2>
@@ -18,7 +18,7 @@ const Closing = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="font-body text-lg text-foreground/70 mb-4"
+        className="font-body text-lg text-foreground/60 mb-4"
       >
         Me encantaría compartir esta noche mágica con vos
       </motion.p>

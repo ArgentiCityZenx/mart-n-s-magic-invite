@@ -26,7 +26,7 @@ const Location = () => {
   }, [next]);
 
   return (
-    <section className="py-16 md:py-24 px-6 bg-background">
+    <section className="py-16 md:py-24 px-6 bg-card">
       <div className="max-w-md mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,7 +35,7 @@ const Location = () => {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <MapPin className="w-14 h-14 text-purple-vivid mx-auto animate-float-gentle" />
+          <MapPin className="w-14 h-14 text-purple-brand mx-auto animate-float-gentle" />
         </motion.div>
 
         <motion.h2
@@ -43,7 +43,7 @@ const Location = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-heading text-3xl md:text-4xl font-bold text-purple-vivid mb-4"
+          className="font-heading text-3xl md:text-4xl font-bold text-purple-brand mb-4"
         >
           ¿Dónde?
         </motion.h2>
@@ -53,21 +53,19 @@ const Location = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-body text-base md:text-lg text-foreground/80 mb-8"
+          className="font-body text-base md:text-lg text-foreground/70 mb-8"
         >
-          Te espero en{" "}
-          <strong className="text-foreground">Av. Corrientes 857,</strong>
+          Te espero en <strong className="text-foreground">Av. Corrientes 857,</strong>
           <br />
           CABA · 21:00 hs
         </motion.p>
 
-        {/* Image carousel */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative mb-8 overflow-hidden rounded-xl"
+          className="relative mb-8 overflow-hidden rounded-xl shadow-lg"
         >
           <div
             className="flex transition-transform duration-500 ease-in-out"
@@ -88,14 +86,14 @@ const Location = () => {
 
           <button
             onClick={prev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/60 flex items-center justify-center text-foreground hover:bg-purple-brand transition-colors"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-card/80 shadow flex items-center justify-center text-foreground hover:bg-purple-brand hover:text-primary-foreground transition-colors"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={next}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/60 flex items-center justify-center text-foreground hover:bg-purple-brand transition-colors"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-card/80 shadow flex items-center justify-center text-foreground hover:bg-purple-brand hover:text-primary-foreground transition-colors"
             aria-label="Siguiente"
           >
             <ChevronRight className="w-4 h-4" />
@@ -107,7 +105,7 @@ const Location = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  i === current ? "bg-purple-vivid w-5" : "bg-foreground/30"
+                  i === current ? "bg-purple-brand w-5" : "bg-foreground/25"
                 }`}
                 aria-label={`Imagen ${i + 1}`}
               />
