@@ -12,7 +12,9 @@ const RSVPForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `¡Hola Martín! Soy ${name}. ${
-      attendance === "asistire" ? "Voy a asistir al show 🎩✨" : "No voy a poder asistir 😔"
+      attendance === "asistire"
+        ? "Voy a asistir al show 🎩✨"
+        : "No voy a poder asistir 😔"
     }${notes ? `. Nota: ${notes}` : ""}. Mi teléfono: ${phone}`;
     const waUrl = `https://wa.me/5491167867229?text=${encodeURIComponent(message)}`;
     window.open(waUrl, "_blank");
@@ -27,8 +29,12 @@ const RSVPForm = () => {
           animate={{ opacity: 1, scale: 1 }}
           className="max-w-md mx-auto text-center"
         >
-          <p className="font-heading text-3xl text-purple-light mb-2">¡Gracias!</p>
-          <p className="text-foreground/70 font-body">Tu confirmación fue enviada por WhatsApp.</p>
+          <p className="font-heading text-3xl text-purple-vivid mb-2">
+            ¡Gracias!
+          </p>
+          <p className="text-foreground/70 font-body">
+            Tu confirmación fue enviada por WhatsApp.
+          </p>
         </motion.div>
       </section>
     );
@@ -37,7 +43,6 @@ const RSVPForm = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-card">
       <div className="max-w-md mx-auto text-center">
-        {/* Icon */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,21 +50,19 @@ const RSVPForm = () => {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <Sparkles className="w-14 h-14 text-purple-light mx-auto animate-float-gentle" />
+          <Sparkles className="w-14 h-14 text-purple-vivid mx-auto animate-float-gentle" />
         </motion.div>
 
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-heading text-3xl md:text-4xl font-bold text-purple-light mb-8"
+          className="font-heading text-3xl md:text-4xl font-bold text-purple-vivid mb-8"
         >
           ¡Confirmá tu asistencia!
         </motion.h2>
 
-        {/* Form */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,9 +71,8 @@ const RSVPForm = () => {
           onSubmit={handleSubmit}
           className="space-y-4 text-left"
         >
-          {/* Name */}
           <div>
-            <label className="block text-sm font-ui text-foreground/70 mb-1.5">
+            <label className="block text-sm font-body font-medium text-foreground/70 mb-1.5">
               Nombre y Apellido
             </label>
             <input
@@ -82,9 +84,8 @@ const RSVPForm = () => {
             />
           </div>
 
-          {/* Attendance */}
           <div>
-            <label className="block text-sm font-ui text-foreground/70 mb-1.5">
+            <label className="block text-sm font-body font-medium text-foreground/70 mb-1.5">
               Asistencia
             </label>
             <select
@@ -99,9 +100,8 @@ const RSVPForm = () => {
             </select>
           </div>
 
-          {/* Notes */}
           <div>
-            <label className="block text-sm font-ui text-foreground/70 mb-1.5">
+            <label className="block text-sm font-body font-medium text-foreground/70 mb-1.5">
               Aclaraciones
             </label>
             <input
@@ -113,9 +113,8 @@ const RSVPForm = () => {
             />
           </div>
 
-          {/* Phone */}
           <div>
-            <label className="block text-sm font-ui text-foreground/70 mb-1.5">
+            <label className="block text-sm font-body font-medium text-foreground/70 mb-1.5">
               Teléfono de contacto
             </label>
             <input
@@ -127,12 +126,8 @@ const RSVPForm = () => {
             />
           </div>
 
-          {/* Submit */}
           <div className="pt-2 text-center">
-            <button
-              type="submit"
-              className="btn-purple w-full md:w-auto md:px-12 text-sm"
-            >
+            <button type="submit" className="btn-purple w-full md:w-auto md:px-12 text-sm">
               Enviar
             </button>
           </div>

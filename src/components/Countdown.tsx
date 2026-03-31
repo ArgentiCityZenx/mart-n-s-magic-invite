@@ -40,7 +40,6 @@ const Countdown = () => {
   return (
     <section className="py-16 md:py-24 px-6 bg-card">
       <div className="max-w-md mx-auto text-center">
-        {/* Confetti icon */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,10 +47,9 @@ const Countdown = () => {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <PartyPopper className="w-14 h-14 text-purple-light mx-auto animate-float-gentle" />
+          <PartyPopper className="w-14 h-14 text-purple-vivid mx-auto animate-float-gentle" />
         </motion.div>
 
-        {/* Date */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,21 +57,20 @@ const Countdown = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-body text-lg md:text-xl text-foreground/80 mb-1"
         >
-          Viernes <strong className="text-foreground">15 de Mayo</strong> de 2026
+          Viernes{" "}
+          <strong className="text-foreground">15 de Mayo</strong> de 2026
         </motion.h2>
 
-        {/* "Faltan" label */}
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-heading text-2xl text-purple-light mb-8"
+          className="font-heading text-2xl text-purple-vivid mb-8"
         >
           Faltan
         </motion.h3>
 
-        {/* Countdown grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,15 +81,17 @@ const Countdown = () => {
           {(Object.keys(timeLeft) as (keyof TimeLeft)[]).map((key, i) => (
             <div key={key} className="flex items-center gap-3 md:gap-5">
               <div className="flex flex-col items-center">
-                <span className="font-ui text-3xl md:text-5xl font-bold text-foreground">
+                <span className="font-body text-3xl md:text-5xl font-bold text-foreground">
                   {String(timeLeft[key]).padStart(2, "0")}
                 </span>
-                <span className="mt-1 text-xs text-muted-foreground font-ui uppercase tracking-wider">
+                <span className="mt-1 text-xs text-muted-foreground font-body uppercase tracking-wider">
                   {labels[key]}
                 </span>
               </div>
               {i < 3 && (
-                <span className="text-2xl md:text-4xl text-purple-light font-light -mt-4">:</span>
+                <span className="text-2xl md:text-4xl text-purple-vivid font-light -mt-4">
+                  :
+                </span>
               )}
             </div>
           ))}
