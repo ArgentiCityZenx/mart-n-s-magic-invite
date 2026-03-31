@@ -4,7 +4,7 @@ import heroImg from "@/assets/hero-magic.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
       {/* Background image with light overlay */}
       <div className="absolute inset-0">
         <img
