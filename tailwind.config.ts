@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         heading: ['Playfair Display', 'serif'],
-        body: ['Lato', 'sans-serif'],
+        body: ['Karla', 'sans-serif'],
+        ui: ['Rubik', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,15 +52,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-        },
-        obsidian: "hsl(var(--obsidian))",
-        mystic: {
-          DEFAULT: "hsl(var(--mystic))",
-          light: "hsl(var(--mystic-light))",
-        },
+        "purple-brand": "hsl(var(--purple-brand))",
+        "purple-light": "hsl(var(--purple-light))",
+        "purple-glow": "hsl(var(--purple-glow))",
+        "purple-soft": "hsl(var(--purple-soft))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -75,20 +71,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsla(43, 54%, 52.5%, 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsla(43, 54%, 52.5%, 0.6)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 3s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },
   },
