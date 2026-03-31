@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ['Playfair Display', 'serif'],
-        body: ['Karla', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
         ui: ['Rubik', 'sans-serif'],
       },
       colors: {
@@ -53,9 +53,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "purple-brand": "hsl(var(--purple-brand))",
+        "purple-vivid": "hsl(var(--purple-vivid))",
         "purple-light": "hsl(var(--purple-light))",
-        "purple-glow": "hsl(var(--purple-glow))",
         "purple-soft": "hsl(var(--purple-soft))",
+        "purple-deep": "hsl(var(--purple-deep))",
       },
       borderRadius: {
         lg: "var(--radius)",
