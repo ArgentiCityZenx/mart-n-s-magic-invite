@@ -6,23 +6,23 @@
 
 @layer base {
   :root {
-    --background: 270 15% 6%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 98%;
+    --foreground: 270 15% 15%;
 
-    --card: 270 18% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 15% 15%;
 
-    --popover: 270 18% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 15% 15%;
 
     --primary: 280 62% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 50% 30%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 270 10% 94%;
+    --secondary-foreground: 270 15% 15%;
 
-    --muted: 270 12% 15%;
-    --muted-foreground: 270 5% 55%;
+    --muted: 270 8% 93%;
+    --muted-foreground: 270 5% 45%;
 
     --accent: 280 62% 40%;
     --accent-foreground: 0 0% 100%;
@@ -30,17 +30,16 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 270 12% 20%;
-    --input: 270 12% 20%;
+    --border: 270 8% 88%;
+    --input: 270 8% 88%;
     --ring: 280 62% 40%;
 
     --radius: 0.75rem;
 
-    /* Martin Almada brand purples */
     --purple-brand: 280 62% 40%;
     --purple-vivid: 280 70% 50%;
-    --purple-light: 280 55% 65%;
-    --purple-soft: 280 35% 75%;
+    --purple-light: 280 55% 55%;
+    --purple-soft: 280 30% 70%;
     --purple-deep: 280 65% 28%;
 
     --font-heading: 'Playfair Display', serif;
@@ -86,7 +85,7 @@
     border-color: hsl(var(--purple-brand));
   }
   .glow-purple {
-    box-shadow: 0 0 30px hsla(280, 62%, 40%, 0.45);
+    box-shadow: 0 0 30px hsla(280, 62%, 40%, 0.35);
   }
   .btn-purple {
     background-color: hsl(var(--purple-brand));
@@ -100,15 +99,8 @@
   }
   .btn-purple:hover {
     background-color: hsl(var(--purple-vivid));
-    box-shadow: 0 0 25px hsla(280, 62%, 40%, 0.5);
+    box-shadow: 0 0 25px hsla(280, 62%, 40%, 0.4);
     transform: scale(1.03);
-  }
-  .section-divider {
-    width: 60px;
-    height: 3px;
-    background: hsl(var(--purple-brand));
-    margin: 0 auto;
-    border-radius: 2px;
   }
 }
 
