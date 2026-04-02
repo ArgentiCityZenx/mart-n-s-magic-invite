@@ -9,17 +9,21 @@ const RSVPForm = () => {
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const message = `¡Hola Martín! Soy ${name}. ${
-      attendance === "asistire"
-        ? "Voy a asistir al show 🎩✨"
-        : "No voy a poder asistir 😔"
-    }${notes ? `. Nota: ${notes}` : ""}. Mi teléfono: ${phone}`;
-    const waUrl = `https://wa.me/5491167867229?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, "_blank");
-    setSubmitted(true);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  const formData = { name, attendance, notes, phone };
+
+  try {
+    await fetch("https://martinalmadamago.com/save_rsvp.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+  } catch (error) {
+    console.error("Error guardando en DB", error);
+  }
+};
 
   if (submitted) {
     return (
