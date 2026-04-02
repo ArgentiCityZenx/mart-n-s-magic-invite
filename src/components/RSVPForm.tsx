@@ -15,7 +15,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   const formData = { name, attendance, notes, phone };
 
   try {
-    await fetch("https://martinalmadamago.com/save_rsvp.php", {
+    await fetch("https://martinalmadamago.com/invitacion/save_rsvp.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
