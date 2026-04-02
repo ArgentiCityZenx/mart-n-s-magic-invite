@@ -4,9 +4,9 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
 $host = "localhost";
-$db   = "NOMBRE_DE_TU_DB";
-$user = "USUARIO_DE_TU_DB";
-$pass = "PASSWORD_DE_TU_DB";
+$db   = "c1671739_i";
+$user = "c1671739_i";
+$pass = "Itaqui6576";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
